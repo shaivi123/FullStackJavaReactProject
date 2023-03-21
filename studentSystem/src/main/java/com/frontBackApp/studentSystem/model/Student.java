@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+//import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.StringUtils;
+
 
 @Entity
 public class Student {
@@ -47,5 +50,10 @@ public class Student {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+
+    public boolean isValid() {
+        return !(name == null || name.isBlank() || address == null || address.isBlank());
     }
 }

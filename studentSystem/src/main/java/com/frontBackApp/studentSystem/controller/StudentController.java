@@ -1,5 +1,6 @@
 package com.frontBackApp.studentSystem.controller;
 
+import com.frontBackApp.studentSystem.dto.StudentDto;
 import com.frontBackApp.studentSystem.exception.StudentNotFoundException;
 import com.frontBackApp.studentSystem.model.Student;
 import com.frontBackApp.studentSystem.service.StudentService;
@@ -8,15 +9,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin("http://localhost:3002")
+@CrossOrigin("http://localhost:3000")
 public class StudentController {
 
     @Autowired
     private StudentService studentService;
 
     @PostMapping("/addStudent")
-    public String saveStudent(@RequestBody Student student){
-        studentService.saveStudent(student);
+    public String saveStudent(@RequestBody Student student) throws Exception {
+        studentService.saveStudent(student.getName(), student.getAddress());
         return "New student added!";
     }
 

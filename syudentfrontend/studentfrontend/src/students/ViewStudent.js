@@ -28,7 +28,7 @@ export default function ViewStudent(){
 
                     <div className="card">
                         <div className="card-header">
-                            Details of student id : {student.id}
+                            Details of student id :
                             <ul className="list-group list-group-flush">
                                 <li className="list-group-item">
                                     <b>Name:</b>

@@ -15,9 +15,9 @@ function App() {
 
           <Routes>
             <Route exact path="/" element={<Home/>} />
-            <Route exact path="/addStudent" element={<AddStudent/>} />
-            <Route exact path="/editstudent/:id" element={<EditStudent/>} />
-            <Route exact path="/viewstudent/:id"  element={<ViewStudent/>} />
+            <Route exact path="/add" element={<AddStudent/>} />
+            <Route exact path="/edit/:id" element={<EditStudent/>} />
+            <Route exact path="/view/:id"  element={<ViewStudent/>} />
           </Routes>
           
       </Router>

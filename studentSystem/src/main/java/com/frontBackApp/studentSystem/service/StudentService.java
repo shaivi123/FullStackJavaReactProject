@@ -15,8 +15,17 @@ public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
 
-    public Student saveStudent(Student student){
-        return studentRepository.save(student);
+    public Student saveStudent(String name, String address) throws Exception {
+
+        Student student = new Student();
+        student.setName(name);
+        student.setAddress(address);
+        if (!student.isValid()) {
+            throw new Exception("Object data cannot be empty. Please enter some data.");
+        } else {
+            studentRepository.save(student);
+        }
+        return student;
     }
 
     public List<Student> getAllStudent(){
